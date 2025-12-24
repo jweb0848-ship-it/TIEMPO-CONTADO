@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herramientas Útiles</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        
+        <div class="converter-card" id="card-parking">
+            <h2>🚗 Parking</h2>
+            <div class="input-group">
+                <label>Tiempo (Horas):</label>
+                <input type="number" id="parkingInput" placeholder="Ej: 2" value="1">
+            </div>
+            <div class="icon-arrow">💵</div>
+            <div class="input-group">
+                <label>Total a pagar:</label>
+                <div id="parkingResult" class="result-box money-box">$ 10.00</div>
+                <p class="rate-info">$20.00 cada 2 horas</p>
+            </div>
+        </div>
+
+        <div class="converter-card" id="card-conversor">
+            <h2>⏱️ Conversor</h2>
+            <div class="input-group">
+                <label>Dato A:</label>
+                <input type="text" id="inputTop" placeholder="0" autocomplete="off">
+                <select id="unitTop">
+                    <option value="seconds">Segundos</option>
+                    <option value="minutes" selected>Minutos</option>
+                    <option value="hours">Horas</option>
+                    <option value="days">Días</option>
+                </select>
+            </div>
+            <div class="icon-arrow">⇅</div>
+            <div class="input-group">
+                <label>Dato B:</label>
+                <input type="text" id="inputBottom" placeholder="0" autocomplete="off">
+                <select id="unitBottom">
+                    <option value="seconds">Segundos</option>
+                    <option value="minutes">Minutos</option>
+                    <option value="hours" selected>Horas</option>
+                    <option value="days">Días</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="converter-card" id="card-sumar">
+            <h2>➕ Sumar Horas</h2>
+            <div class="input-group">
+                <label>Hora de Inicio:</label>
+                <input type="time" id="startTime" value="08:35">
+            </div>
+            <div class="input-group">
+                <label>Quiero sumar:</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="addHours" placeholder="Hrs" value="0">
+                    <input type="number" id="addMinutes" placeholder="Min" value="0">
+                </div>
+            </div>
+            <div class="icon-arrow">⬇️</div>
+            <div class="input-group">
+                <label>Hora Final:</label>
+                <div id="endTimeResult" class="result-box clock-box">--:--</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

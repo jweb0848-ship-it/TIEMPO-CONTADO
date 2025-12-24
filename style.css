@@ -1,0 +1,81 @@
+/* Configuración base (Mobile First) */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column; /* Móvil: Columna */
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+}
+
+/* Tarjetas */
+.converter-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 300px; /* Reduje un poquito el ancho para que quepan 3 fácil */
+    text-align: center;
+}
+
+/* === AQUÍ ESTÁ LA CORRECCIÓN PARA PC === */
+@media (min-width: 1024px) {
+    .main-container {
+        flex-direction: row; /* Horizontal */
+        justify-content: center; /* Centrados en pantalla */
+        align-items: flex-start;
+        gap: 20px; /* Menos espacio para evitar que bajen de fila */
+        flex-wrap: nowrap; /* ¡OBLIGA A QUE NO SE BAJEN! */
+    }
+
+    /* Forzamos el orden visual con CSS */
+    /* Parking (ID #card-parking) -> Izquierda */
+    #card-parking {
+        order: 1;
+    }
+    /* Conversor (ID #card-conversor) -> Centro */
+    #card-conversor {
+        order: 2;
+    }
+    /* Sumar Horas (ID #card-sumar) -> Derecha */
+    #card-sumar {
+        order: 3;
+    }
+}
+
+/* --- ESTILOS VISUALES (Resto igual) --- */
+h2 { color: #333; margin: 0 0 1.5rem 0; font-size: 1.5rem; }
+.input-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 10px; text-align: left; }
+label { font-size: 0.9rem; color: #666; font-weight: 600; }
+input, select, .result-box {
+    padding: 12px; border: 2px solid #ddd; border-radius: 8px;
+    font-size: 1.1rem; outline: none; transition: all 0.3s;
+    width: 100%; box-sizing: border-box; font-family: inherit;
+}
+input:focus, select:focus { border-color: #007bff; }
+input.is-result { color: #007bff; font-weight: 600; }
+.clock-box {
+    color: #0056b3; font-size: 2rem; font-weight: bold;
+    display: flex; justify-content: center; align-items: center;
+    background-color: #e3f2fd; border-color: #90caf9; height: 60px; font-family: monospace;
+}
+.money-box {
+    color: #28a745; font-size: 1.8rem; font-weight: bold;
+    display: flex; justify-content: center; align-items: center;
+    background-color: #e8f5e9; border-color: #c3e6cb; height: 60px;
+}
+.rate-info { font-size: 0.8rem; color: #888; margin-top: 5px; text-align: center; font-style: italic; }
+.icon-arrow { font-size: 1.5rem; margin: 10px 0; color: #007bff; font-weight: bold; }
